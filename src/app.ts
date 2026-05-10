@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { errorHandler } from './api/middleware/errorHandler';
 import authRoutes from './api/routes/auth.routes';
+import contactRoutes from './api/routes/contact.routes';
 
 export const app = express();
 
@@ -17,6 +18,7 @@ app.get('/health', (req, res) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/contacts', contactRoutes);
 
 // Error handler — must be last
 app.use(errorHandler);
