@@ -5,9 +5,9 @@
     "outDir": "./dist",
 
     // Environment Settings
-    "module": "CommonJS",
+    "module": "node16",
     "target": "ES2020",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
 
     // Other Outputs
     "sourceMap": true,
