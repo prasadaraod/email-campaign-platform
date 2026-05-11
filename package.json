@@ -4,10 +4,13 @@
   "description": "email campain platform",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "worker": "ts-node-dev --respawn --transpile-only src/worker.ts",
     "migrate": "ts-node src/db/migrate.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "start:worker": "node dist/worker.js",
+    "seed": "ts-node src/db/seed.ts"
   },
   "repository": {
     "type": "git",

@@ -11,6 +11,7 @@ CREATE TABLE users (
   tenant_id   UUID REFERENCES tenants(id),
   email       TEXT UNIQUE NOT NULL,
   password    TEXT NOT NULL,
+  name        TEXT,
   created_at  TIMESTAMPTZ DEFAULT now()
 );
 
@@ -53,3 +54,5 @@ CREATE TABLE events (
 
 CREATE INDEX idx_contacts_tenant ON contacts(tenant_id) WHERE subscribed = TRUE;
 CREATE INDEX idx_campaigns_status ON campaigns(status);
+CREATE INDEX idx_sends_campaign ON sends(campaign_id);
+CREATE INDEX idx_events_send ON events(send_id);
